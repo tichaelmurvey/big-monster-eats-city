@@ -10,7 +10,8 @@ func get_hit(dmg : float) -> void:
 	if hit_points <= 0:
 		hit_points = 0
 		destroyed = true
-
+		$Sprite2D.texture = "res://assets/building_destroyed.tres"
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
