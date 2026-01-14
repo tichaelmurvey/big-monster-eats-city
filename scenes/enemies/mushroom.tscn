@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cx3mr1sx8bqke"]
 
 [ext_resource type="Texture2D" uid="uid://c3hjxw7miy5ul" path="res://assets/mushroom/Mushroom-Idle.png" id="1_gvsd5"]
-[ext_resource type="Script" uid="uid://dxdojrkq6y7hi" path="res://mushroom.gd" id="2_ke5i0"]
+[ext_resource type="Script" uid="uid://dxdojrkq6y7hi" path="res://scenes/enemies/mushroom.gd" id="2_ke5i0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pl5ep"]
 radius = 5.0
@@ -14,7 +14,7 @@ radius = 13.0
 atlas = ExtResource("1_gvsd5")
 region = Rect2(24, 31, 36.616196, 82.64517)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="mushroom" type="CharacterBody2D"]
 script = ExtResource("2_ke5i0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
