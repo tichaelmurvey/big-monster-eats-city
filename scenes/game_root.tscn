@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://b57opu40lbe34"]
+[gd_scene load_steps=5 format=4 uid="uid://b57opu40lbe34"]
 
 [ext_resource type="TileSet" uid="uid://b7hxkttro1ccg" path="res://assets/tilesets/city.tres" id="1_uebra"]
 [ext_resource type="PackedScene" uid="uid://cx3mr1sx8bqke" path="res://scenes/enemies/mushroom.tscn" id="2_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="3_iusj4"]
+[ext_resource type="Texture2D" uid="uid://byxb0jnt1wg3w" path="res://assets/building_destroyed.tres" id="4_jb3nc"]
 
 [node name="game_root" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -40,11 +41,13 @@ position = Vector2(193, 296)
 [node name="building6" parent="." instance=ExtResource("3_iusj4")]
 position = Vector2(256, 370)
 
-[node name="building7" parent="." instance=ExtResource("3_iusj4")]
-position = Vector2(171, 369)
-
 [node name="building8" parent="." instance=ExtResource("3_iusj4")]
 position = Vector2(373, 375)
 
 [node name="building9" parent="." instance=ExtResource("3_iusj4")]
-position = Vector2(447, 375)
+position = Vector2(513, 334)
+
+[node name="Sprite2D" parent="building9" index="1"]
+texture = ExtResource("4_jb3nc")
+
+[editable path="building9"]
