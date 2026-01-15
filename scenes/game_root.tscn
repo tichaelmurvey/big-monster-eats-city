@@ -46,8 +46,3 @@ position = Vector2(373, 375)
 
 [node name="building9" parent="." instance=ExtResource("3_iusj4")]
 position = Vector2(513, 334)
-
-[node name="Sprite2D" parent="building9" index="1"]
-texture = ExtResource("4_jb3nc")
-
-[editable path="building9"]
