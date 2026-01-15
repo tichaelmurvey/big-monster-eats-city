@@ -1,5 +1,7 @@
 extends Node
-
+var money = 1000
+var citizens = 1000
+var engineers = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
