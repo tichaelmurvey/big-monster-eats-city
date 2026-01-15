@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfrey0j76w2xc"]
+
+[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_epe58"]
+[ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_c6iwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek1m4"]
+atlas = ExtResource("2_c6iwu")
+region = Rect2(112, 32, 48, 96)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rd1xa"]
+load_path = "res://.godot/imported/CP_V1.0.4.png-6c63ef8e09e43083adef157c9e5d2ca3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxytb"]
+atlas = SubResource("CompressedTexture2D_rd1xa")
+region = Rect2(112, 110, 48, 18)
+
+[node name="school" instance=ExtResource("1_epe58")]
+resource = "engineers"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.5, -19)
+
+[node name="original" parent="." index="1"]
+texture = SubResource("AtlasTexture_ek1m4")
+
+[node name="destroyed" parent="." index="2"]
+position = Vector2(-25, -21)
+texture = SubResource("AtlasTexture_fxytb")

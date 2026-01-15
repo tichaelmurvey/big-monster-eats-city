@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://couegi3dguigq"]
+
+[ext_resource type="PackedScene" uid="uid://dp5wjwvcqsgpv" path="res://scenes/buildings/wall.tscn" id="1_ph8uw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="wall" parent="." instance=ExtResource("1_ph8uw")]
+position = Vector2(0, -55)
+metadata/_edit_group_ = true
+
+[node name="wall2" parent="." instance=ExtResource("1_ph8uw")]
+position = Vector2(0, -42)
+metadata/_edit_group_ = true
+
+[node name="wall7" parent="." instance=ExtResource("1_ph8uw")]
+position = Vector2(0, -28)
+metadata/_edit_group_ = true
+
+[node name="wall8" parent="." instance=ExtResource("1_ph8uw")]
+position = Vector2(0, -14)
+metadata/_edit_group_ = true
+
+[node name="wall9" parent="." instance=ExtResource("1_ph8uw")]
+metadata/_edit_group_ = true

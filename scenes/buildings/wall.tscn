@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp5wjwvcqsgpv"]
+
+[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_a3mu7"]
+[ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_gxk2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpfny"]
+atlas = ExtResource("2_gxk2j")
+region = Rect2(607.89655, 188, 23.112793, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ksci"]
+atlas = ExtResource("2_gxk2j")
+region = Rect2(607.89655, 203, 23.112793, 5)
+
+[node name="wall" instance=ExtResource("1_a3mu7")]
+hit_points = 50
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, -5.75)
+
+[node name="original" parent="." index="1"]
+position = Vector2(-12, -21)
+texture = SubResource("AtlasTexture_gpfny")
+
+[node name="destroyed" parent="." index="2"]
+position = Vector2(-12, -5)
+texture = SubResource("AtlasTexture_2ksci")

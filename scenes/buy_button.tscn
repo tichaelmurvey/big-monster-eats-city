@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd3xlhpcshb6l"]
+
+[ext_resource type="Texture2D" uid="uid://ctx3174q5wd8l" path="res://assets/building.tres" id="1_kyagg"]
+[ext_resource type="Script" uid="uid://bln1vplyrpij1" path="res://scenes/building_button.gd" id="2_jp56i"]
+[ext_resource type="PackedScene" uid="uid://n6lef7qtbkim" path="res://scenes/buildings/apartment.tscn" id="3_p3ah5"]
+
+[node name="TextureButton" type="TextureButton" node_paths=PackedStringArray("hover_manager")]
+texture_normal = ExtResource("1_kyagg")
+script = ExtResource("2_jp56i")
+hover_manager = NodePath("")
+building_scene = ExtResource("3_p3ah5")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(40, 18)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 69.0
+offset_right = 49.0
+offset_bottom = 97.0
+size_flags_horizontal = 8
+size_flags_vertical = 12
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+text = "30 Money"
+fit_content = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

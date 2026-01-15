@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx3mr1sx8bqke"]
+[gd_scene load_steps=5 format=3 uid="uid://cx3mr1sx8bqke"]
 
 [ext_resource type="Texture2D" uid="uid://c3hjxw7miy5ul" path="res://assets/mushroom/Mushroom-Idle.png" id="1_gvsd5"]
 [ext_resource type="Script" uid="uid://dxdojrkq6y7hi" path="res://scenes/enemies/mushroom.gd" id="2_ke5i0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pl5ep"]
 radius = 5.0
-height = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jg55k"]
-radius = 13.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke5i0"]
 atlas = ExtResource("1_gvsd5")
@@ -18,12 +15,8 @@ region = Rect2(24, 31, 36.616196, 82.64517)
 script = ExtResource("2_ke5i0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_pl5ep")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -28)
-shape = SubResource("CircleShape2D_jg55k")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -36)
 texture = SubResource("AtlasTexture_ke5i0")

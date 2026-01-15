@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://vo11jvnwenqp"]
+
+[ext_resource type="PackedScene" uid="uid://dp5wjwvcqsgpv" path="res://scenes/buildings/wall.tscn" id="1_6fasv"]
+
+[node name="wall_block_hori" type="Node2D"]
+
+[node name="wall3" parent="." instance=ExtResource("1_6fasv")]
+position = Vector2(-48, 0)
+
+[node name="wall4" parent="." instance=ExtResource("1_6fasv")]
+position = Vector2(-24, 0)
+
+[node name="wall5" parent="." instance=ExtResource("1_6fasv")]
+
+[node name="wall6" parent="." instance=ExtResource("1_6fasv")]
+position = Vector2(24, 0)
+
+[node name="wall8" parent="." instance=ExtResource("1_6fasv")]
+position = Vector2(48, 0)

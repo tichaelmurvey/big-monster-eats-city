@@ -1,26 +1,18 @@
 [gd_scene load_steps=9 format=4 uid="uid://b57opu40lbe34"]
 
+[ext_resource type="PackedScene" uid="uid://lg8i3jxwdlxw" path="res://scenes/hud.tscn" id="1_a1rh6"]
 [ext_resource type="TileSet" uid="uid://b7hxkttro1ccg" path="res://assets/tilesets/city.tres" id="1_uebra"]
+[ext_resource type="PackedScene" uid="uid://n6lef7qtbkim" path="res://scenes/buildings/apartment.tscn" id="2_a1rh6"]
 [ext_resource type="PackedScene" uid="uid://cx3mr1sx8bqke" path="res://scenes/enemies/mushroom.tscn" id="2_jb3nc"]
-[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="3_iusj4"]
-[ext_resource type="Script" uid="uid://beb28njpxk3yi" path="res://scenes/currency_label.gd" id="4_jb3nc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb3nc"]
-resource_local_to_scene = true
-bg_color = Color(0.7441724, 0.5821494, 0, 1)
-
-[sub_resource type="Theme" id="Theme_jb3nc"]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_jb3nc")
-RichTextLabel/colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iusj4"]
-bg_color = Color(0.5039918, 0.59425044, 0.82149196, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1rh6"]
-bg_color = Color(0.9040676, 0.4552589, 0.24242604, 1)
+[ext_resource type="PackedScene" uid="uid://dq30lko4e3js2" path="res://scenes/buildings/factory.tscn" id="3_j7aru"]
+[ext_resource type="PackedScene" uid="uid://vo11jvnwenqp" path="res://scenes/buildings/wall_block_hori.tscn" id="4_j7aru"]
+[ext_resource type="PackedScene" uid="uid://cfrey0j76w2xc" path="res://scenes/buildings/school.tscn" id="4_ylec3"]
+[ext_resource type="PackedScene" uid="uid://couegi3dguigq" path="res://scenes/buildings/wall_block_verti.tscn" id="6_a1rh6"]
 
 [node name="game_root" type="Node2D"]
 metadata/_edit_lock_ = true
+
+[node name="hud" parent="." instance=ExtResource("1_a1rh6")]
 
 [node name="map" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -36,88 +28,55 @@ tile_set = ExtResource("1_uebra")
 
 [node name="buildings" type="Node2D" parent="."]
 
-[node name="building2" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(337, 298)
+[node name="apartment" parent="buildings" instance=ExtResource("2_a1rh6")]
+position = Vector2(252, 193)
 
-[node name="building3" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(396, 296)
+[node name="factory" parent="buildings" instance=ExtResource("3_j7aru")]
+position = Vector2(387, 311)
 
-[node name="building4" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(256, 295)
+[node name="factory" parent="buildings/factory" instance=ExtResource("3_j7aru")]
+position = Vector2(71, 116)
 
-[node name="building5" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(193, 296)
+[node name="apartment2" parent="buildings/factory" instance=ExtResource("2_a1rh6")]
+position = Vector2(87, 13)
 
-[node name="building6" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(256, 370)
+[node name="school" parent="buildings" instance=ExtResource("4_ylec3")]
+position = Vector2(172, 305)
 
-[node name="building8" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(373, 375)
-
-[node name="building9" parent="buildings" instance=ExtResource("3_iusj4")]
-position = Vector2(513, 334)
+[node name="apartment2" parent="buildings" instance=ExtResource("2_a1rh6")]
+position = Vector2(403, 208)
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="mushroom" parent="enemies" instance=ExtResource("2_jb3nc")]
-position = Vector2(365, 652)
+position = Vector2(208, 613)
 
-[node name="hud" type="CanvasLayer" parent="."]
+[node name="mushroom2" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(262, 591)
 
-[node name="Control" type="Control" parent="hud"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 382.0
-offset_bottom = 65.0
-theme = SubResource("Theme_jb3nc")
+[node name="mushroom3" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(158, 581)
 
-[node name="money" type="PanelContainer" parent="hud/Control"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 10.0
-offset_right = 132.0
-offset_bottom = 44.0
-metadata/_edit_group_ = true
+[node name="mushroom4" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(297, 626)
 
-[node name="text" type="RichTextLabel" parent="hud/Control/money"]
-layout_mode = 2
-text = "Money: 100"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_jb3nc")
+[node name="mushroom5" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(430, 616)
 
-[node name="citizens" type="PanelContainer" parent="hud/Control"]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 10.0
-offset_right = 266.0
-offset_bottom = 44.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_iusj4")
-metadata/_edit_group_ = true
+[node name="mushroom6" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(472, 599)
 
-[node name="text" type="RichTextLabel" parent="hud/Control/citizens"]
-layout_mode = 2
-text = "Money: 100"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_jb3nc")
-currency_type = "citizens"
+[node name="mushroom7" parent="enemies" instance=ExtResource("2_jb3nc")]
+position = Vector2(392, 554)
 
-[node name="engineers" type="PanelContainer" parent="hud/Control"]
-layout_mode = 0
-offset_left = 277.0
-offset_top = 10.0
-offset_right = 402.0
-offset_bottom = 44.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_a1rh6")
-metadata/_edit_group_ = true
+[node name="wall_block_hori" parent="." instance=ExtResource("4_j7aru")]
+position = Vector2(150, 450)
 
-[node name="text" type="RichTextLabel" parent="hud/Control/engineers"]
-layout_mode = 2
-text = "Money: 100"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_jb3nc")
-currency_type = "engineers"
+[node name="wall_block_hori2" parent="." instance=ExtResource("4_j7aru")]
+position = Vector2(307, 503)
 
-[editable path="buildings/building9"]
+[node name="Node2D" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(389, 417)
+
+[node name="wall_block_hori3" parent="." instance=ExtResource("4_j7aru")]
+position = Vector2(268, 261)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq30lko4e3js2"]
+
+[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_28ys6"]
+[ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_8tkco"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv8pv"]
+atlas = ExtResource("2_8tkco")
+region = Rect2(272, 32, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xonsx"]
+atlas = ExtResource("2_8tkco")
+region = Rect2(272, 110, 80, 18)
+
+[node name="factory" instance=ExtResource("1_28ys6")]
+hit_points = 20
+resource = "money"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1.5, -20)
+
+[node name="original" parent="." index="1"]
+position = Vector2(-39, -97)
+texture = SubResource("AtlasTexture_mv8pv")
+
+[node name="destroyed" parent="." index="2"]
+position = Vector2(-39, -19)
+texture = SubResource("AtlasTexture_xonsx")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6lef7qtbkim"]
+
+[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_f0cwm"]
+
+[node name="apartment" instance=ExtResource("1_f0cwm")]
+resource = "citizens"
