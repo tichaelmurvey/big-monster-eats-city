@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cfrey0j76w2xc" path="res://scenes/buildings/school.tscn" id="4_ylec3"]
 [ext_resource type="PackedScene" uid="uid://couegi3dguigq" path="res://scenes/buildings/wall_block_verti.tscn" id="6_a1rh6"]
 
-[node name="game_root" type="Node2D"]
+[node name="game" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="hud" parent="." instance=ExtResource("1_a1rh6")]

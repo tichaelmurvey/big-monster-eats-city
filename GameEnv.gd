@@ -4,11 +4,12 @@ var citizens = 1000
 var engineers = 100
 var hovering = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var buildings : Node2D = get_node("/root/game/buildings")
 
+func place_building(building : Building) -> void:
+    var global_pos = building.global_position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+    if building.get_parent():
+        building.get_parent().remove_child(building)
+    buildings.add_child(building)
+    building.global_position = global_pos

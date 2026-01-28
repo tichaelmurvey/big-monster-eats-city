@@ -6,8 +6,6 @@ class_name Building
 @export var resource_amt = 1
 var destroyed_building = load("res://assets/building_destroyed.tres")
 
-func _ready() -> void:
-	print(name, hit_points, resource, resource_amt)
 
 func get_hit(dmg : float) -> void:
 	hit_points -= dmg

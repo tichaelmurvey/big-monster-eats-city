@@ -1,23 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://lg8i3jxwdlxw"]
+[gd_scene load_steps=16 format=3 uid="uid://lg8i3jxwdlxw"]
 
-[ext_resource type="Script" path="res://scenes/currency_label.gd" id="1_ahhtf"]
-[ext_resource type="Script" uid="uid://bln1vplyrpij1" path="res://scenes/building_button.gd" id="2_5ysmq"]
-[ext_resource type="PackedScene" uid="uid://dq30lko4e3js2" path="res://scenes/buildings/factory.tscn" id="3_5pdws"]
+[ext_resource type="Theme" uid="uid://b022edk5ipvlu" path="res://hud.tres" id="1_0i1j5"]
+[ext_resource type="PackedScene" uid="uid://l68c03rp3npn" path="res://scenes/build_button.tscn" id="1_047uy"]
+[ext_resource type="Script" uid="uid://beb28njpxk3yi" path="res://scenes/currency_label.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_hd3ao"]
+[ext_resource type="PackedScene" uid="uid://n6lef7qtbkim" path="res://scenes/buildings/apartment.tscn" id="3_5pdws"]
+[ext_resource type="Texture2D" uid="uid://ctx3174q5wd8l" path="res://assets/building.tres" id="4_0i1j5"]
 [ext_resource type="Script" uid="uid://cdsagog7rcn7h" path="res://scenes/hover_manager.gd" id="4_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://cfrey0j76w2xc" path="res://scenes/buildings/school.tscn" id="4_hd3ao"]
 [ext_resource type="PackedScene" uid="uid://dp5wjwvcqsgpv" path="res://scenes/buildings/wall.tscn" id="5_0i1j5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb3nc"]
-resource_local_to_scene = true
-bg_color = Color(0.7441724, 0.5821494, 0, 1)
-
-[sub_resource type="Theme" id="Theme_jb3nc"]
-MarginContainer/constants/margin_bottom = 20
-MarginContainer/constants/margin_left = 20
-MarginContainer/constants/margin_right = 20
-MarginContainer/constants/margin_top = 20
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_jb3nc")
-RichTextLabel/colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo0fn"]
 content_margin_left = 0.0
@@ -31,27 +22,12 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo0fn"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ysmq"]
-load_path = "res://.godot/imported/CP_V1.0.4.png-6c63ef8e09e43083adef157c9e5d2ca3.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
-atlas = SubResource("CompressedTexture2D_5ysmq")
-region = Rect2(272, 32, 80, 96)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo2fv"]
-load_path = "res://.godot/imported/CP_V1.0.4.png-6c63ef8e09e43083adef157c9e5d2ca3.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_047uy"]
-atlas = SubResource("CompressedTexture2D_uo2fv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mphia"]
+atlas = ExtResource("2_hd3ao")
 region = Rect2(112, 32, 48, 96)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oo0fn"]
-load_path = "res://.godot/imported/CP_V1.0.4.png-6c63ef8e09e43083adef157c9e5d2ca3.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ysmq"]
-atlas = SubResource("CompressedTexture2D_oo0fn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m4u7"]
+atlas = ExtResource("2_hd3ao")
 region = Rect2(607.89655, 188, 23.112793, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
@@ -70,95 +46,54 @@ bg_color = Color(0.9040676, 0.4552589, 0.24242604, 1)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
-offset_bottom = 56.0
-theme = SubResource("Theme_jb3nc")
+offset_bottom = 120.0
+theme = ExtResource("1_0i1j5")
 
 [node name="Panel" type="Panel" parent="top_menu"]
+clip_contents = true
 layout_mode = 0
-offset_left = 805.0
+offset_left = 698.0
 offset_top = 2.0
 offset_right = 1151.0
-offset_bottom = 117.0
+offset_bottom = 105.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oo0fn")
 
-[node name="PanelContainer" type="BoxContainer" parent="top_menu"]
+[node name="PanelContainer" type="BoxContainer" parent="top_menu/Panel"]
+clip_contents = true
 layout_direction = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -330.0
-offset_top = 9.0
-offset_right = -7.0
-offset_bottom = 106.0
-grow_horizontal = 0
-theme_override_constants/separation = 20
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Control" type="PanelContainer" parent="top_menu/PanelContainer"]
+[node name="Factory" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_oo0fn")
+hover_manager = NodePath("../../../../hover_manager")
+cost = 30
 
-[node name="TextureButton2" type="TextureButton" parent="top_menu/PanelContainer" node_paths=PackedStringArray("hover_manager")]
+[node name="School" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_6fi6k")
-stretch_mode = 3
-script = ExtResource("2_5ysmq")
-hover_manager = NodePath("../../../hover_manager")
-building_scene = ExtResource("3_5pdws")
-
-[node name="PanelContainer" type="PanelContainer" parent="top_menu/PanelContainer/TextureButton2"]
-custom_minimum_size = Vector2(40, 18)
-layout_mode = 0
-size_flags_horizontal = 8
-size_flags_vertical = 12
-
-[node name="RichTextLabel" type="RichTextLabel" parent="top_menu/PanelContainer/TextureButton2/PanelContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "100 Money"
-fit_content = true
-
-[node name="TextureButton3" type="TextureButton" parent="top_menu/PanelContainer" node_paths=PackedStringArray("hover_manager")]
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_047uy")
-stretch_mode = 3
-script = ExtResource("2_5ysmq")
-hover_manager = NodePath("../../../hover_manager")
+texture_normal = SubResource("AtlasTexture_mphia")
+hover_manager = NodePath("../../../../hover_manager")
 building_scene = ExtResource("4_hd3ao")
 
-[node name="PanelContainer" type="PanelContainer" parent="top_menu/PanelContainer/TextureButton3"]
-custom_minimum_size = Vector2(40, 18)
-layout_mode = 0
-size_flags_horizontal = 8
-size_flags_vertical = 12
-
-[node name="RichTextLabel" type="RichTextLabel" parent="top_menu/PanelContainer/TextureButton3/PanelContainer"]
+[node name="Apartment" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "50 Money"
-fit_content = true
+texture_normal = ExtResource("4_0i1j5")
+hover_manager = NodePath("../../../../hover_manager")
+building_scene = ExtResource("3_5pdws")
 
-[node name="TextureButton4" type="TextureButton" parent="top_menu/PanelContainer" node_paths=PackedStringArray("hover_manager")]
-custom_minimum_size = Vector2(60, 0)
+[node name="Wall" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_5ysmq")
-stretch_mode = 5
-script = ExtResource("2_5ysmq")
-hover_manager = NodePath("../../../hover_manager")
+size_flags_vertical = 1
+texture_normal = SubResource("AtlasTexture_0m4u7")
+hover_manager = NodePath("../../../../hover_manager")
 building_scene = ExtResource("5_0i1j5")
-
-[node name="PanelContainer" type="PanelContainer" parent="top_menu/PanelContainer/TextureButton4"]
-custom_minimum_size = Vector2(40, 18)
-layout_mode = 0
-size_flags_horizontal = 8
-size_flags_vertical = 12
-
-[node name="RichTextLabel" type="RichTextLabel" parent="top_menu/PanelContainer/TextureButton4/PanelContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "50 Money"
-fit_content = true
+cost = 10
 
 [node name="money" type="PanelContainer" parent="top_menu"]
 layout_mode = 0
