@@ -25,8 +25,9 @@ func handle_movement(delta: float) -> void:
 func handle_collision(collision_info : KinematicCollision2D) -> void:
 	var hit_obj = collision_info.get_collider()
 	
-	#deal 1 damage to whatever it hit 
-	hit_obj.get_hit(1) 
-	# ^ nb this isn't very safe, trusts get_hit exists
+	if hit_obj.is_in_group("damageable"):
+		# deal 1 damage to whatever it hit
+		hit_obj.get_hit(1)
+
 	#bounce off (TODO: post-hit dmg cooldown)
 	velocity = velocity.bounce(collision_info.get_normal())
