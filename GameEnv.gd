@@ -6,10 +6,7 @@ var hovering = false
 
 @onready var buildings : Node2D = get_node("/root/game/buildings")
 
-func place_building(building : Building) -> void:
-    var global_pos = building.global_position
-
-    if building.get_parent():
-        building.get_parent().remove_child(building)
-    buildings.add_child(building)
-    building.global_position = global_pos
+func place_building(building_scene : PackedScene, global_position: Vector2) -> void:
+	var building = building_scene.instantiate()
+	building.global_position = global_position
+	buildings.add_child(building)
