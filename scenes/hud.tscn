@@ -74,18 +74,21 @@ alignment = 1
 layout_mode = 2
 hover_manager = NodePath("../../../../hover_manager")
 cost = 30
+building_name = "factory"
 
 [node name="School" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_mphia")
 hover_manager = NodePath("../../../../hover_manager")
 building_scene = ExtResource("4_hd3ao")
+building_name = "school"
 
 [node name="Apartment" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
 texture_normal = ExtResource("4_0i1j5")
 hover_manager = NodePath("../../../../hover_manager")
 building_scene = ExtResource("3_5pdws")
+building_name = "apartment"
 
 [node name="Wall" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
@@ -94,6 +97,7 @@ texture_normal = SubResource("AtlasTexture_0m4u7")
 hover_manager = NodePath("../../../../hover_manager")
 building_scene = ExtResource("5_0i1j5")
 cost = 10
+building_name = "wall"
 
 [node name="money" type="PanelContainer" parent="top_menu"]
 layout_mode = 0
