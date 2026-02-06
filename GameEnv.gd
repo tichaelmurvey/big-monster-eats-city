@@ -1,4 +1,7 @@
 extends Node
+
+const GRID_SCALE: float = 24.0
+
 var money = 1000
 var citizens = 1000
 var engineers = 100

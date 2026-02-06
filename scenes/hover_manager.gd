@@ -17,7 +17,8 @@ func set_hover(scene : PackedScene, input_name : String):
 func _input(event):
 	if GameEnv.hovering:
 		if event is InputEventMouseMotion:
-			position = event.position
+			var grid_position = (event.position / GameEnv.GRID_SCALE).round()
+			position = grid_position * GameEnv.GRID_SCALE
 
 		# Mouse in viewport coordinates.
 		if event is InputEventMouseButton:
