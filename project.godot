@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameEnv="*res://GameEnv.gd"
 
+[global_group]
+
+damageable="things that take damage on collision"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
