@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://couegi3dguigq" path="res://scenes/buildings/wall_block_verti.tscn" id="6_a1rh6"]
 
 [node name="game" type="Node2D"]
+y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="hud" parent="." instance=ExtResource("1_a1rh6")]
@@ -27,23 +28,30 @@ tile_map_data = PackedByteArray("AAAGABYAAAAFACYAAAAHABYAAAAFACYAAAAIABYAAAAFACY
 tile_set = ExtResource("1_uebra")
 
 [node name="buildings" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="apartment" parent="buildings" instance=ExtResource("2_a1rh6")]
+y_sort_enabled = false
 position = Vector2(252, 193)
 
 [node name="factory" parent="buildings" instance=ExtResource("3_j7aru")]
+y_sort_enabled = false
 position = Vector2(387, 311)
 
 [node name="factory" parent="buildings/factory" instance=ExtResource("3_j7aru")]
+y_sort_enabled = false
 position = Vector2(71, 116)
 
 [node name="apartment2" parent="buildings/factory" instance=ExtResource("2_a1rh6")]
+y_sort_enabled = false
 position = Vector2(87, 13)
 
 [node name="school" parent="buildings" instance=ExtResource("4_ylec3")]
+y_sort_enabled = false
 position = Vector2(172, 305)
 
 [node name="apartment2" parent="buildings" instance=ExtResource("2_a1rh6")]
+y_sort_enabled = false
 position = Vector2(403, 208)
 
 [node name="enemies" type="Node2D" parent="."]
