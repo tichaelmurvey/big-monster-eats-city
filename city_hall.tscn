@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb21ci33gfy02"]
+
+[ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_8r1v3"]
+[ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_ojpoh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44g52"]
+size = Vector2(83, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0il2"]
+atlas = ExtResource("2_ojpoh")
+region = Rect2(272, 32, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpbxb"]
+atlas = ExtResource("2_ojpoh")
+region = Rect2(272, 116, 80, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rfuv"]
+size = Vector2(83, 24)
+
+[node name="city_hall" instance=ExtResource("1_8r1v3")]
+hit_points = 20
+resource_amt = 0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(42, -12)
+shape = SubResource("RectangleShape2D_44g52")
+
+[node name="original" parent="." index="1"]
+position = Vector2(2, -96)
+texture = SubResource("AtlasTexture_v0il2")
+
+[node name="destroyed" parent="." index="2"]
+position = Vector2(2, -12)
+texture = SubResource("AtlasTexture_hpbxb")
+
+[node name="CollisionShape2D" parent="overlap_detector" index="0"]
+position = Vector2(42, -12)
+shape = SubResource("RectangleShape2D_4rfuv")

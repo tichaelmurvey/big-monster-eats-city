@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b57opu40lbe34"]
+[gd_scene load_steps=11 format=4 uid="uid://b57opu40lbe34"]
 
 [ext_resource type="PackedScene" uid="uid://lg8i3jxwdlxw" path="res://scenes/hud.tscn" id="1_a1rh6"]
 [ext_resource type="TileSet" uid="uid://b7hxkttro1ccg" path="res://assets/tilesets/city.tres" id="1_uebra"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dp5wjwvcqsgpv" path="res://scenes/buildings/wall.tscn" id="4_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://cfrey0j76w2xc" path="res://scenes/buildings/school.tscn" id="4_ylec3"]
 [ext_resource type="PackedScene" uid="uid://couegi3dguigq" path="res://scenes/buildings/wall_block_verti.tscn" id="6_a1rh6"]
+[ext_resource type="PackedScene" uid="uid://bb21ci33gfy02" path="res://city_hall.tscn" id="10_1brn0"]
 
 [node name="game" type="Node2D"]
 y_sort_enabled = true
@@ -121,3 +122,6 @@ position = Vector2(600, 384)
 
 [node name="factory2" parent="." instance=ExtResource("3_j7aru")]
 position = Vector2(528, 348)
+
+[node name="city_hall" parent="." instance=ExtResource("10_1brn0")]
+position = Vector2(156, 378)

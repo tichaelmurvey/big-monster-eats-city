@@ -7,12 +7,14 @@ class_name Building
 @export var overlap_detector : Area2D
 var destroyed_building = load("res://assets/building_destroyed.tres")
 
+signal on_destroyed
 
 func get_hit(dmg : float) -> void:
 	hit_points -= dmg
 	if hit_points <= 0:
 		hit_points = 0
 		destroyed = true
+		on_destroyed.emit()
 		#TODO: Add more visual stages of building damage
 		$original.visible = false
 		$destroyed.visible = true
