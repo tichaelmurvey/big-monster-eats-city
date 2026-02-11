@@ -1,6 +1,6 @@
 extends Node
 
-const GRID_SCALE: float = 24.0
+const GRID_SCALE: float = 12.0
 
 var money = 1000
 var citizens = 1000
@@ -19,6 +19,7 @@ func place_building(building_scene : PackedScene, global_position: Vector2, buil
 		return;
 
 	if prices[building_name] > money:
+		print("not enough money!")
 		return;
 
 	money -= prices[building_name]

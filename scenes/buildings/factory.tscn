@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq30lko4e3js2"]
+[gd_scene load_steps=7 format=3 uid="uid://dq30lko4e3js2"]
 
 [ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_28ys6"]
 [ext_resource type="Texture2D" uid="uid://bmb1d4q3v1cev" path="res://assets/CP_V1.0.4.png" id="2_8tkco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28ys6"]
+size = Vector2(83, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv8pv"]
 atlas = ExtResource("2_8tkco")
@@ -11,17 +14,25 @@ region = Rect2(272, 32, 80, 96)
 atlas = ExtResource("2_8tkco")
 region = Rect2(272, 110, 80, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tkco"]
+size = Vector2(83, 24)
+
 [node name="factory" instance=ExtResource("1_28ys6")]
 hit_points = 20
 resource = "money"
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(1.5, -20)
+position = Vector2(42, -12)
+shape = SubResource("RectangleShape2D_28ys6")
 
 [node name="original" parent="." index="1"]
-position = Vector2(-39, -97)
+position = Vector2(2, -96)
 texture = SubResource("AtlasTexture_mv8pv")
 
 [node name="destroyed" parent="." index="2"]
-position = Vector2(-39, -19)
+position = Vector2(2, -18)
 texture = SubResource("AtlasTexture_xonsx")
+
+[node name="CollisionShape2D" parent="overlap_detector" index="0"]
+position = Vector2(42, -12)
+shape = SubResource("RectangleShape2D_8tkco")

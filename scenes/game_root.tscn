@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b57opu40lbe34"]
+[gd_scene load_steps=10 format=4 uid="uid://b57opu40lbe34"]
 
 [ext_resource type="PackedScene" uid="uid://lg8i3jxwdlxw" path="res://scenes/hud.tscn" id="1_a1rh6"]
 [ext_resource type="TileSet" uid="uid://b7hxkttro1ccg" path="res://assets/tilesets/city.tres" id="1_uebra"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx3mr1sx8bqke" path="res://scenes/enemies/mushroom.tscn" id="2_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://dq30lko4e3js2" path="res://scenes/buildings/factory.tscn" id="3_j7aru"]
 [ext_resource type="PackedScene" uid="uid://vo11jvnwenqp" path="res://scenes/buildings/wall_block_hori.tscn" id="4_j7aru"]
+[ext_resource type="PackedScene" uid="uid://dp5wjwvcqsgpv" path="res://scenes/buildings/wall.tscn" id="4_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://cfrey0j76w2xc" path="res://scenes/buildings/school.tscn" id="4_ylec3"]
 [ext_resource type="PackedScene" uid="uid://couegi3dguigq" path="res://scenes/buildings/wall_block_verti.tscn" id="6_a1rh6"]
 
@@ -24,39 +25,27 @@ tile_map_data = PackedByteArray("AAABAAEAAAAQADIAAAABAAIAAAAQADIAAAACAAIAAAAQADI
 tile_set = ExtResource("1_uebra")
 
 [node name="roads" type="TileMapLayer" parent="map"]
+visible = false
 tile_map_data = PackedByteArray("AAAGABYAAAAFACYAAAAHABYAAAAFACYAAAAIABYAAAAFACYAAAAJABYAAAAFACYAAAAKABYAAAAFACYAAAALABYAAAAFACYAAAAMABYAAAAFACYAAAANABYAAAAFACYAAAAOABYAAAAFACYAAAAPABYAAAAFACYAAAAQABYAAAAFACYAAAARABYAAAAFACYAAAASABYAAAAHACYAAAATABYAAAAFACYAAAAUABYAAAAFACYAAAAVABYAAAAFACYAAAAWABYAAAAFACYAAAAXABYAAAAFACYAAAAYABYAAAAFACYAAAAZABYAAAAFACYAAAAaABYAAAAFACYAAAAbABYAAAAFACYAAAAcABYAAAAFACYAAAAdABYAAAAFACYAAAASAB8AAAAHACYAAAASAB4AAAAHACYAAAASAB0AAAAHACYAAAASABwAAAAHACYAAAASABsAAAAHACYAAAASABoAAAAHACYAAAASABkAAAAHACYAAAASABgAAAAHACYAAAASABcAAAAHACYAAAASABUAAAAHACYAAAASABQAAAAHACYAAAASABMAAAAHACYAAAASABIAAAAHACYAAAASABEAAAAHACYAAAASABAAAAAHACYAAAASAA8AAAAHACYAAAASAA4AAAAHACYAAAASAA0AAAAHACYAAAASAAwAAAAHACYAAAASAAsAAAAHACYAAAA=")
 tile_set = ExtResource("1_uebra")
 
 [node name="buildings" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="apartment" parent="buildings" instance=ExtResource("2_a1rh6")]
-y_sort_enabled = false
-position = Vector2(252, 193)
-
-[node name="factory" parent="buildings" instance=ExtResource("3_j7aru")]
-position = Vector2(456, 312)
-
-[node name="school" parent="buildings" instance=ExtResource("4_ylec3")]
-position = Vector2(172, 305)
-
-[node name="apartment2" parent="buildings" instance=ExtResource("2_a1rh6")]
-y_sort_enabled = false
-position = Vector2(403, 208)
-
 [node name="enemies" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="mushroom" parent="enemies" instance=ExtResource("2_jb3nc")]
-position = Vector2(208, 613)
+position = Vector2(578, 620)
 
 [node name="mushroom2" parent="enemies" instance=ExtResource("2_jb3nc")]
-position = Vector2(262, 591)
+position = Vector2(632, 598)
 
 [node name="mushroom3" parent="enemies" instance=ExtResource("2_jb3nc")]
-position = Vector2(158, 581)
+position = Vector2(528, 588)
 
 [node name="mushroom4" parent="enemies" instance=ExtResource("2_jb3nc")]
-position = Vector2(297, 626)
+position = Vector2(667, 633)
 
 [node name="mushroom5" parent="enemies" instance=ExtResource("2_jb3nc")]
 position = Vector2(430, 616)
@@ -68,13 +57,67 @@ position = Vector2(472, 599)
 position = Vector2(392, 554)
 
 [node name="wall_block_hori" parent="." instance=ExtResource("4_j7aru")]
-position = Vector2(150, 450)
+position = Vector2(384, 408)
 
 [node name="wall_block_hori2" parent="." instance=ExtResource("4_j7aru")]
-position = Vector2(307, 503)
+position = Vector2(576, 408)
 
 [node name="Node2D" parent="." instance=ExtResource("6_a1rh6")]
-position = Vector2(389, 417)
+position = Vector2(384, 396)
+
+[node name="Node2D2" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(672, 396)
+
+[node name="Node2D3" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(384, 336)
+
+[node name="Node2D4" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(672, 336)
+
+[node name="Node2D5" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(384, 276)
+
+[node name="Node2D6" parent="." instance=ExtResource("6_a1rh6")]
+position = Vector2(672, 276)
 
 [node name="wall_block_hori3" parent="." instance=ExtResource("4_j7aru")]
-position = Vector2(268, 261)
+position = Vector2(408, 216)
+
+[node name="wall_block_hori4" parent="." instance=ExtResource("4_j7aru")]
+position = Vector2(528, 216)
+
+[node name="wall" parent="." instance=ExtResource("4_jb3nc")]
+position = Vector2(648, 216)
+
+[node name="wall2" parent="." instance=ExtResource("4_jb3nc")]
+position = Vector2(384, 216)
+
+[node name="wall3" parent="." instance=ExtResource("4_jb3nc")]
+position = Vector2(672, 216)
+
+[node name="wall4" parent="." instance=ExtResource("4_jb3nc")]
+position = Vector2(384, 408)
+
+[node name="apartment" parent="." instance=ExtResource("2_a1rh6")]
+position = Vector2(456, 276)
+
+[node name="apartment2" parent="." instance=ExtResource("2_a1rh6")]
+position = Vector2(456, 324)
+
+[node name="apartment3" parent="." instance=ExtResource("2_a1rh6")]
+position = Vector2(456, 372)
+
+[node name="factory" parent="." instance=ExtResource("3_j7aru")]
+position = Vector2(528, 264)
+
+[node name="school" parent="." instance=ExtResource("4_ylec3")]
+position = Vector2(600, 276)
+
+[node name="school2" parent="." instance=ExtResource("4_ylec3")]
+position = Vector2(600, 336)
+
+[node name="school3" parent="." instance=ExtResource("4_ylec3")]
+position = Vector2(600, 384)
+
+[node name="factory2" parent="." instance=ExtResource("3_j7aru")]
+position = Vector2(528, 348)

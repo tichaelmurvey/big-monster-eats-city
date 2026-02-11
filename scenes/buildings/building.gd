@@ -4,6 +4,7 @@ class_name Building
 @export var destroyed = false
 @export var resource : String
 @export var resource_amt = 1
+@export var overlap_detector : Area2D
 var destroyed_building = load("res://assets/building_destroyed.tres")
 
 

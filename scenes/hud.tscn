@@ -40,16 +40,23 @@ bg_color = Color(0.5039918, 0.59425044, 0.82149196, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1rh6"]
 bg_color = Color(0.9040676, 0.4552589, 0.24242604, 1)
 
-[node name="hud" type="CanvasLayer"]
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
-[node name="top_menu" type="Control" parent="."]
+[node name="hover_manager" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("4_6fi6k")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="top_menu" type="Control" parent="hud"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 120.0
 theme = ExtResource("1_0i1j5")
 
-[node name="Panel" type="Panel" parent="top_menu"]
+[node name="Panel" type="Panel" parent="hud/top_menu"]
 clip_contents = true
 layout_mode = 0
 offset_left = 698.0
@@ -58,7 +65,7 @@ offset_right = 1151.0
 offset_bottom = 105.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oo0fn")
 
-[node name="PanelContainer" type="BoxContainer" parent="top_menu/Panel"]
+[node name="PanelContainer" type="BoxContainer" parent="hud/top_menu/Panel"]
 clip_contents = true
 layout_direction = 2
 layout_mode = 1
@@ -70,36 +77,36 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Factory" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
+[node name="Factory" parent="hud/top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
-hover_manager = NodePath("../../../../hover_manager")
+hover_manager = NodePath("../../../../../hover_manager")
 cost = 30
 building_name = "factory"
 
-[node name="School" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
+[node name="School" parent="hud/top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_mphia")
-hover_manager = NodePath("../../../../hover_manager")
+hover_manager = NodePath("../../../../../hover_manager")
 building_scene = ExtResource("4_hd3ao")
 building_name = "school"
 
-[node name="Apartment" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
+[node name="Apartment" parent="hud/top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
 texture_normal = ExtResource("4_0i1j5")
-hover_manager = NodePath("../../../../hover_manager")
+hover_manager = NodePath("../../../../../hover_manager")
 building_scene = ExtResource("3_5pdws")
 building_name = "apartment"
 
-[node name="Wall" parent="top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
+[node name="Wall" parent="hud/top_menu/Panel/PanelContainer" node_paths=PackedStringArray("hover_manager") instance=ExtResource("1_047uy")]
 layout_mode = 2
 size_flags_vertical = 1
 texture_normal = SubResource("AtlasTexture_0m4u7")
-hover_manager = NodePath("../../../../hover_manager")
+hover_manager = NodePath("../../../../../hover_manager")
 building_scene = ExtResource("5_0i1j5")
 cost = 10
 building_name = "wall"
 
-[node name="money" type="PanelContainer" parent="top_menu"]
+[node name="money" type="PanelContainer" parent="hud/top_menu"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 10.0
@@ -108,14 +115,14 @@ offset_bottom = 44.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ysmq")
 metadata/_edit_group_ = true
 
-[node name="text" type="RichTextLabel" parent="top_menu/money"]
+[node name="text" type="RichTextLabel" parent="hud/top_menu/money"]
 layout_mode = 2
 text = "Money: 100"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_ahhtf")
 
-[node name="citizens" type="PanelContainer" parent="top_menu"]
+[node name="citizens" type="PanelContainer" parent="hud/top_menu"]
 layout_mode = 0
 offset_left = 142.0
 offset_top = 10.0
@@ -124,7 +131,7 @@ offset_bottom = 44.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iusj4")
 metadata/_edit_group_ = true
 
-[node name="text" type="RichTextLabel" parent="top_menu/citizens"]
+[node name="text" type="RichTextLabel" parent="hud/top_menu/citizens"]
 layout_mode = 2
 text = "Money: 100"
 horizontal_alignment = 1
@@ -132,7 +139,7 @@ vertical_alignment = 1
 script = ExtResource("1_ahhtf")
 currency_type = "citizens"
 
-[node name="engineers" type="PanelContainer" parent="top_menu"]
+[node name="engineers" type="PanelContainer" parent="hud/top_menu"]
 layout_mode = 0
 offset_left = 277.0
 offset_top = 10.0
@@ -141,13 +148,10 @@ offset_bottom = 44.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a1rh6")
 metadata/_edit_group_ = true
 
-[node name="text" type="RichTextLabel" parent="top_menu/engineers"]
+[node name="text" type="RichTextLabel" parent="hud/top_menu/engineers"]
 layout_mode = 2
 text = "Money: 100"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_ahhtf")
 currency_type = "engineers"
-
-[node name="hover_manager" type="Node2D" parent="."]
-script = ExtResource("4_6fi6k")

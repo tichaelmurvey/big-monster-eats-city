@@ -17,12 +17,9 @@ region = Rect2(112, 110, 48, 18)
 [node name="school" instance=ExtResource("1_epe58")]
 resource = "engineers"
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-0.5, -19)
-
 [node name="original" parent="." index="1"]
 texture = SubResource("AtlasTexture_ek1m4")
 
 [node name="destroyed" parent="." index="2"]
-position = Vector2(-25, -21)
+position = Vector2(0, -18)
 texture = SubResource("AtlasTexture_fxytb")

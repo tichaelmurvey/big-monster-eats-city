@@ -3,5 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d0k1f06wshs7t" path="res://scenes/buildings/building.tscn" id="1_f0cwm"]
 
 [node name="apartment" instance=ExtResource("1_f0cwm")]
-y_sort_enabled = true
 resource = "citizens"
+
+[node name="destroyed" parent="." index="2"]
+position = Vector2(0, -16)
+scale = Vector2(1, 1.0666667)
